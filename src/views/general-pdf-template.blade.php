@@ -236,13 +236,13 @@
 	    <script type="text/php">
 	    	@if (strtolower($orientation) == 'portrait')
 	        if ( isset($pdf) ) {
-	            $pdf->page_text(30, ($pdf->get_height() - 26.89), "Date Printed: " . date('d M Y H:i:s'), null, 10);
-	        	$pdf->page_text(($pdf->get_width() - 84), ($pdf->get_height() - 26.89), "Page {PAGE_NUM} of {PAGE_COUNT}", null, 10);
+	            $pdf->page_text(30, ($pdf->get_height() - 26.89), date('d M Y H:i:s'), null, 10);
+	        	$pdf->page_text(($pdf->get_width() - 84), ($pdf->get_height() - 26.89), "Pagina {PAGE_NUM} di {PAGE_COUNT}", null, 10);
 	        }
 		    @elseif (strtolower($orientation) == 'landscape')
 		    if ( isset($pdf) ) {
-		        $pdf->page_text(30, ($pdf->get_height() - 26.89), "Date Printed: " . date('d M Y H:i:s'), null, 10);
-		    	$pdf->page_text(($pdf->get_width() - 84), ($pdf->get_height() - 26.89), "Page {PAGE_NUM} of {PAGE_COUNT}", null, 10);
+		        $pdf->page_text(30, ($pdf->get_height() - 26.89), date('d M Y H:i:s'), null, 10);
+		    	$pdf->page_text(($pdf->get_width() - 84), ($pdf->get_height() - 26.89), "Pagina {PAGE_NUM} di {PAGE_COUNT}", null, 10);
 		    }
 		    @endif
 	    </script>
