@@ -23,8 +23,8 @@ class PdfReport extends ReportGenerator
 		try {
 			$pdf = \App::make('snappy.pdf.wrapper');
 			$pdf->setOption('footer-font-size', 10);
-			$pdf->setOption('footer-left', 'Page [page] of [topage]');
-			$pdf->setOption('footer-right', 'Date Printed: ' . date('d M Y H:i:s'));
+			$pdf->setOption('footer-left', 'Pagina [page] di [topage]');
+			$pdf->setOption('footer-right', date('d/m/Y H:i'));
 		} catch (\ReflectionException $e) {
 			try {
 				$pdf = \App::make('dompdf.wrapper');
