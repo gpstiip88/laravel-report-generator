@@ -156,6 +156,9 @@
 		    									} elseif ($showTotalColumns[$colName] == 'idr') {
 		    										echo '<td class="right"><b>IDR ' . number_format($total[$colName], 0, ',', '.') . '</b></td>';
 		    									}
+											elseif ($showTotalColumns[$colName] == 'float') {
+					                                                	echo '<td class="right"><b>' . number_format($total[$colName], 2, ',', '.') . '</b></td>';
+                                        					    	}
 		    									$dataFound = true;
 		    								} else {
 		    									if ($dataFound) {
