@@ -202,13 +202,22 @@
 					    						$displayedColValue = $displayAs;
 					    					}
 					    				}
+									if(isset($editColumns[$colName]['inNewLine'])){
+                                            					$inNewLine = $editColumns[$colName]['inNewLine'];
+                                        				}
+                                        				if (is_object($inNewLine) && $inNewLine instanceof Closure) {
+                                            					$line = $inNewLine($result);
+                                            					$displayedColValue = "<span style='display:block'>".$line['name']."</span><span>" . $line['place']."</span>";
+                                        				} elseif (!(is_object($inNewLine) && $inNewLine instanceof Closure)) {
+                                            					$displayedColValue = $inNewLine;
+                                        				}
 				    				}
 
 				    				if (array_key_exists($colName, $showTotalColumns)) {
 				    					$total[$colName] += $generatedColData;
 				    				}
 			    				?>
-			    				<td class="{{ $class }}">{{ $displayedColValue }}</td>
+			    				<td class="{{ $class }}">{!! $displayedColValue !!}</td>
 			    			@endforeach
 			    		</tr>
 		    			<?php $ctr++; $no++; ?>
